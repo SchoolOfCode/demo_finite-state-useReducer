@@ -32,7 +32,7 @@ export function reducer(state, action) {
 function Turnstile() {
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <div>
+    <div data-testid="turnstile-container">
       <h2>£{state.coins}</h2>
       <button onClick={() => dispatch({ type: ADD_COIN })}>💰</button>
       <button onClick={() => dispatch({ type: PUSH })}>🤚</button>
