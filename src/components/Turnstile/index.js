@@ -1,28 +1,28 @@
 import React, { useReducer } from "react";
 
-const ADD_COIN = "coin";
-const PUSH = "push";
+export const ADD_COIN = "coin";
+export const PUSH = "push";
 
 const initialState = {
   locked: true,
-  coins: 0
+  coins: 0,
 };
 
-function reducer(state, action) {
+export function reducer(state, action) {
   console.log(state, action);
   switch (action.type) {
     case ADD_COIN:
       if (state.locked === true) {
         return {
           coins: state.coins + 1,
-          locked: false
+          locked: false,
         };
       }
       return state;
     case PUSH:
       return {
         ...state,
-        locked: true
+        locked: true,
       };
     default:
       return state;
